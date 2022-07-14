@@ -1,0 +1,10 @@
+{
+    "wait_phrase": "Пользователь не отвежает уже: ",
+    "wake_up_phrase": "Ура, ты ответил",
+    "finish_phrase": "Пользователь не отвечал: ",
+    "token": "Insert yor token here",
+    "who_to_follow": "Insert name to follow",
+    "id_chat": "Insert id tofollow",
+    "start_time": "14/07/2022 17:09:00"
+    
+}
