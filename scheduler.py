@@ -22,10 +22,10 @@ connection_file_name = 'sleep_guy.txt'
 
 
 def creat_time_str(delta, base_str, if_last=False):
-    days = delta.seconds // 86400
-    hours = (delta.seconds - days * 86400) // 3600
-    minutes = (delta.seconds - days * 86400 - hours * 3600) // 60
-    seconds = (delta.seconds - days * 86400 - hours * 3600 - minutes * 60)
+    days = delta.days
+    hours = (delta.seconds - days) // 3600
+    minutes = (delta.seconds - days - hours * 3600) // 60
+    seconds = (delta.seconds - days - hours * 3600 - minutes * 60)
     morph = pymorphy2.MorphAnalyzer()
     if days:
         word = morph.parse('день')[0]
@@ -36,11 +36,11 @@ def creat_time_str(delta, base_str, if_last=False):
         a = word.make_agree_with_number(hours).word
         base_str = base_str + f' {hours}{a}'
     if minutes:
-        word = morph.parse('минута')[0]
+        word = morph.parse('минуту')[0]
         a = word.make_agree_with_number(minutes).word
         base_str = base_str + f' {minutes}{a}'
     if seconds:
-        word = morph.parse('секунда')[0]
+        word = morph.parse('секунду')[0]
         a = word.make_agree_with_number(seconds).word
         base_str = base_str + f' {seconds}{a}'
     return base_str
